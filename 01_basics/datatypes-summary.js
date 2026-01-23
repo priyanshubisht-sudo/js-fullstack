@@ -32,6 +32,30 @@ const myFunction = function(){
     console.log("Hello world");
 }
 
-console.log(typeof anotherId);
+// console.log(typeof anotherId);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+// ****************************** Memory ********************************** //
+
+// Stack(Primitive, makes a copy), Heap(Non-Primitive, uses the reference)
+
+let myGitHubName = "priyanshubishtsudo"
+
+let anotherName = myGitHubName
+anotherName = "priyanshu"
+
+console.log(anotherName);
+console.log(myGitHubName);
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "priyanshu@google.com"
+
+console.log(userTwo.email);
+console.log(userOne.email);
