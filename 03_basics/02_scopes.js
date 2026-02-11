@@ -17,5 +17,47 @@ if(true) {
 
 // console.log(a);
 // console.log(b);
-console.log(a); // always returns the value out of if scope
+// console.log(a);  always returns the value out of if scope
+
+function one(){ // parent
+    const username = "Priyanshu"
+    
+    function two(){ // child
+        const website = "youtube"
+        console.log(username);
+    } // the inner function can access outer function
+
+    // console.log(website); it can't ask from the second block scope
+    two()
+} 
+
+one()
+
+if(true) {
+    const username = "priyanshu"
+    if(username === "priyanshu"){
+        const website = " youtube"
+        // console.log(username + website);
+    }
+    // console.log(website);
+    
+}
+
+// console.log(username);
+
+// ++++++++++++++++++++++++++++ INTERESTING ++++++++++++++++++++++++++++++
+
+
+console.log(addOne(5))
+
+function addOne(num){
+    return num + 1;
+}
+
+
+addTwo()
+const addTwo = function(num){ // sometimes this is called expression
+    return num + 2 
+}
+
 
