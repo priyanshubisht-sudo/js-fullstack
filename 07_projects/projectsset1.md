@@ -37,3 +37,48 @@ buttons.forEach(function(button) {
 });
 
 ```
+
+## Project 2
+
+```Javascript
+
+const form = document.querySelector('form')
+
+form.addEventListener('submit', function(e){
+  e.preventDefault()
+
+  const height = parseInt(document.querySelector('#height').value)
+  const weight = parseInt(document.querySelector('#weight').value)
+
+  const results = document.querySelector('#results')
+  const range = document.querySelector('#range')
+
+  let bmi;
+
+  if(isNaN(height) || height <= 0){
+    results.innerHTML = `Please give a valid height!`
+    range.innerHTML = ''
+  }
+  else if(isNaN(weight) || weight <= 0){
+    results.innerHTML = `Please give a valid weight!`
+    range.innerHTML = ''
+  }
+  else{
+    bmi = (weight / ((height*height)/10000)).toFixed(2)
+    bmi = parseFloat(bmi)
+
+    results.innerHTML = `<span>${bmi}</span>`
+
+    if(bmi < 18.6){
+      range.innerHTML = `You are Underweight!`
+    }
+    else if(bmi < 24.9){
+      range.innerHTML = `You are Fit and Fine!`
+    }
+    else{
+      range.innerHTML = `You are Overweight!`
+    }
+  }
+}) 
+
+```
